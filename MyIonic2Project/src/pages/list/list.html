@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Timecards List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <!---ion-row responsive-sm>
+        <ion-col class="item.tcDate">DATE</ion-col>
+        <ion-col class="item.tcOwner">EMPLOYEE</ion-col>
+        <ion-col class="item.tcEmpType">EMP TYPE</ion-col>
+        <ion-col class="item.tcType">TIMECARD TYPE</ion-col>
+        <ion-col class="item.tcStatus">STATUS</ion-col>
+      </ion-row-->
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-row responsive-sm>
+        <ion-col class="item.tcDate">
+          {{item.tcDate}}
+        </ion-col>
+        <ion-col class="item.tcOwner">
+          {{item.tcOwner}}
+        </ion-col>
+        <ion-col class="item.tcEmpType">
+          {{item.tcEmpType}}
+        </ion-col>
+        <ion-col class="item.tcType">
+          {{item.tcType}}
+        </ion-col>
+        <ion-col class="item.tcStatus">
+          {{item.tcStatus}}
+        </ion-col>
+      </ion-row>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    This is <b>{{selectedItem.tcOwner}}'s</b> Timecard for {{selectedItem.tcDate}}
+  </div>
+</ion-content>

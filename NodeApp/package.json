@@ -1,0 +1,14 @@
+{
+  "name": "nodeapptrial",
+  "version": "1.0.0",
+  "description": "testing node rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "gonodetrial"
+  },
+  "author": "sita",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
